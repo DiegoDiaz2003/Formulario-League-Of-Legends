@@ -1,0 +1,106 @@
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+form {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 40px;
+  width: 60%;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 5% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-principal {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 3% 0;
+  gap: 1vh;
+}
+
+form .btn {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+form label {
+  font-size: 20px;
+}
+
+form .btn:hover {
+  background-color: #75de68;
+  border-color: #75de68;
+}
+
+/* Diseño responsive */
+
+@media (max-width: 1400px) {
+  .titulo-principal {
+      font-size: 40px;
+  }
+}
+
+@media (max-width: 1000px) {
+  form {
+      width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .titulo-principal {
+      font-size: 8vw;
+  }
+
+  form {
+      width: 100%;
+      padding: 5% 10%;
+  }
+
+  form .btn {
+      font-size: 3.5vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-group input {
+      font-size: 4.5vw;
+      padding: 3%;
+  }
+
+  .form-control{
+    padding: 3% !important;
+    font-size: 5vw !important;
+  }
+}
+
+@media (max-width: 300px) {
+  .titulo-principal {
+      font-size: 7vw;
+  }
+  form label {
+      font-size: 6vw;
+  }
+
+  form .btn {
+      font-size: 5.5vw;
+      padding: 0 2vw;
+    }
+}

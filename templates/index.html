@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        
+        <meta charset="utf-8" />    
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--CSS -->
+        {%load static %}
+        <link rel="stylesheet" href="{% static 'css/estilos.css' %}" />
+
+        <title>Formulario League of Legends</title>
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"
+        ></script>
+
+        <link rel="icon" href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pentagram.com%2Fwork%2Fleague-of-legends&psig=AOvVaw11TKHw4KtssiB7oqZTZcT_&ust=1693605964245000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCJDwmoH0h4EDFQAAAAAdAAAAABAJ" type="image/png">
+    </head>
+
+<body>
+
+    <!-- ... -->
+    <video id="fondoVideo" autoplay loop playsinline muted>
+      <source
+        src="{% static 'video/Season 2019 _ Login Screen - League of Legends.mp4' %}"
+        type="video/mp4"
+      />
+      Tu navegador no admite la reproducción de videos.
+    </video>
+    <!-- ... -->
+
+    <!-- -->
+
+    <section class="container">
+      <form>
+          <h1 class="titulo-principal text-white">
+              Torneo de League of Legends
+          </h1>
+
+          <div class="form-group">
+              <label class="text-white" for="nombreInvocador"
+                  >Nombre de invocador</label
+              >
+              <input
+                  type="text"
+                  class="form-control"
+                  id="nombreInvocador"
+                  placeholder="Ingresa tu nombre de invocador"
+              />
+          </div>
+
+          <div class="form-group">
+              <label class="text-white" for="nivel">Nivel</label>
+              <input
+                  type="number"
+                  class="form-control"
+                  id="nivel"
+                  placeholder="Ingresa tu nivel"
+              />
+          </div>
+
+          <div class="form-group">
+              <label class="text-white" for="rol">Rol principal</label>
+              <select class="form-control" id="rol">
+                  <option value="">Selecciona un rol</option>
+                  <option value="top">Top</option>
+                  <option value="jungle">Jungle</option>
+                  <option value="mid">Mid</option>
+                  <option value="adc">ADC</option>
+                  <option value="support">Support</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+              <label class="text-white" for="campeon">Campeón Main</label>
+              <input
+                  type="text"
+                  class="form-control"
+                  id="campeon"
+                  placeholder="Ingresa tu campeón principal"
+              />
+          </div>
+
+          <div class="form-group">
+              <label class="text-white" for="rango"
+                  >Rango (División)</label
+              >
+              <select class="form-control" id="rango">
+                  <option value="">Selecciona una división</option>
+                  <option value="hierro">Hierro</option>
+                  <option value="bronce">Bronce</option>
+                  <option value="plata">Plata</option>
+                  <option value="oro">Oro</option>
+                  <option value="platino">Platino</option>
+                  <option value="esmeralda">Esmeralda</option>
+                  <option value="diamante">Diamante</option>
+                  <option value="maestro">Maestro</option>
+                  <option value="gran_maestro">Gran Maestro</option>
+                  <option value="retador">Retador</option>
+              </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button id="toggleSonido" class="btn btn-primary">
+              Quitar sonido
+          </button>
+      </form>
+  </section>
+
+  <script>
+      const fondoVideo = document.getElementById("fondoVideo");
+
+      const toggleSonido = document.getElementById("toggleSonido");
+      
+      document.addEventListener("DOMContentLoaded", function () {
+        const botonToggleSonido = document.getElementById("toggleSonido");
+
+        botonToggleSonido.addEventListener("click", function (event) {
+            event.preventDefault();
+            // Aquí puedes agregar la lógica para activar/desactivar el sonido
+        });
+    });
+      toggleSonido.addEventListener("click", () => {
+          if (fondoVideo.muted) {
+              fondoVideo.muted = false;
+              toggleSonido.textContent = "Quitar sonido";
+          } else {
+              fondoVideo.muted = true;
+              toggleSonido.textContent = "Activar sonido";
+          }
+      });
+  </script>
+</body>
+</html>
